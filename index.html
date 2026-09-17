@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Stacking Bug Hunt</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header id="top">
+            <p>Bug hunt</p>
+            <h1>Four Layering Failures</h1>
+        </header>
+        <main>
+            <section class="bug bug-one">
+                <h2>1 · Escaping badge</h2>
+                <article class="card">
+                    <span class="badge">New</span>
+                    <h3>Community feature</h3>
+                    <p>The badge should anchor to this card.</p>
+                </article>
+            </section>
+            <section class="bug bug-two">
+                <h2>2 · Trapped callout</h2>
+                <div class="context-low">
+                    <div class="callout">This should appear over the neighboring panel.</div>
+                </div>
+                <div class="context-high">Neighboring panel</div>
+            </section>
+            <section class="bug bug-three">
+                <h2>3 · Blocked link</h2>
+                <div class="link-card">
+                    <a href="#destination">Go to destination</a>
+                    <span class="decorative-overlay" aria-hidden="true"></span>
+                </div>
+                <p id="destination">Link destination.</p>
+            </section>
+            <section class="bug bug-four">
+                <h2 class="sticky-title">4 · Obscuring sticky heading</h2>
+                <p><a href="#focus-target">Jump to focus target</a></p>
+                <p class="spacer">Scroll within this section.</p>
+                <a id="focus-target" href="#top">Focus target: return to top</a>
+                <p class="spacer"></p>
+            </section>
+        </main>
+    </body>
+    </html>
