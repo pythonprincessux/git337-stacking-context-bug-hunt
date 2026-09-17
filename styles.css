@@ -1,0 +1,119 @@
+:root{
+    --maroon:#8c1d40;
+    --gold:#ffc627;
+    --text:#404040;
+}
+    *{
+        box-sizing:border-box;
+    }
+    html{
+        scroll-behavior:smooth;
+    }
+    body{
+        margin:0;
+        color:var(--text);
+        font-family:Arial,sans-serif;
+        line-height:1.5;
+    }
+    header{
+        padding:2rem;
+        background:var(--maroon);
+        color:#fff;
+    }
+    header p{
+        color:var(--gold);
+        font-weight:700;
+    }main{
+        max-width:64rem;
+        margin:2rem auto;
+        padding:0 1rem;
+    }
+    bug{
+        position:relative;
+        min-height:22rem;
+        margin-block:2rem;
+        padding:1rem;
+        border:1px solid #d0d0d0;
+    }
+    .card{
+        margin:5rem auto 0;
+        max-width:28rem;
+        padding:2rem;
+        border:1px solid #747474;
+    }
+    .badge{
+        position:absolute;
+        inset:1rem 1rem auto auto;
+        padding:.5rem;
+        background:var(--gold);
+    }
+    .bug-two{
+        isolation:isolate;
+    }
+    .context-low{
+        position:absolute;
+        inset:6rem auto auto 5rem;
+        z-index:1;
+        width:18rem;
+        height:10rem;
+        background:#f1f1f1;
+        transform:translateZ(0);
+    }
+    .callout{
+        position:absolute;
+        inset:4rem -10rem auto auto;
+        z-index:999;
+        padding:1rem;
+        background:var(--gold);
+    }
+    .context-high{
+        position:absolute;
+        inset:9rem auto auto 19rem;
+        z-index:2;
+        width:18rem;
+        height:10rem;
+        padding:1rem;
+        background:var(--maroon);
+        color:#fff;
+    }
+    .link-card{
+        position:relative;
+        display:grid;
+        place-items:center;
+        min-height:12rem;
+        background:#f1f1f1;
+    }
+    .link-card a{
+        position:relative;
+        z-index:1;
+        padding:1rem;
+        background:var(--maroon);
+        color:#fff;
+    }
+    .decorative-overlay{
+        position:absolute;
+        inset:0;
+        z-index:2;
+        background:linear-gradient(135deg,transparent 40%,rgb(255 198 39/.65) 40% 60%,transparent 60%);
+    }
+    .bug-four{
+        min-height:75rem;
+    }
+    .sticky-title{
+        position:sticky;
+        inset-block-start:0;
+        z-index:4;
+        margin:0 -1rem;
+        padding:2rem 1rem;
+        background:#fff;
+        border-bottom:4px solid var(--gold);
+    }
+    .spacer{
+        min-height:26rem;
+    }
+    #focus-target{
+        scroll-margin-top:0;
+    }
+    :focus-visible{
+        outline:.25rem solid #006fba;
+        outline-offset:.2rem;}
