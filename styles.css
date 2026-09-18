@@ -102,9 +102,7 @@
         min-height:75rem;
     }
     .sticky-title{
-        position:sticky;
-        inset-block-start:0;
-        z-index:4;
+
         margin:0 -1rem;
         padding:2rem 1rem;
         background:#fff;
@@ -112,9 +110,9 @@
     }
     .spacer{
         min-height:26rem;
-    }
     #focus-target{
-        scroll-margin-top:0;
+    scroll-margin-top:8rem;
+}
     }
     :focus-visible{
         outline:.25rem solid #006fba;
