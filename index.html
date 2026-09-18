@@ -42,6 +42,73 @@
                 <a id="focus-target" href="#top">Focus target: return to top</a>
                 <p class="spacer"></p>
             </section>
+            <section class="evidence">
+    <h2>Four-Bug Hypothesis and Evidence</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bug</th>
+                <th>Hypothesis</th>
+                <th>Evidence / Test</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Escaping badge</td>
+                <td>The badge is positioned to the wrong containing block, causing it to escape the card.</td>
+                <td>I inspected the card and badge in DevTools and tested the position relative on the card. The badge moved into and anchored to the card.</td>
+                <td>Confirmed. Adding the positioning context to the card gave it the right the badge placement.</td>
+            </tr>
+            <tr>
+                <td>2. Trapped callout</td>
+                <td>A stacking context on the lower container keeps the callout from appearing above the neighboring panel.</td>
+                <td>I inspected the callout and its parent in DevTools and disabled the property creating the unwanted stacking context. After doing that, the callout was able to appear above the neighboring panel.</td>
+                <td>Confirmed. Removing the unnecessary stacking context corrected the layering.</td>
+            </tr>
+            <tr>
+                <td>3. Blocked link</td>
+                <td>The decorative overlay is above the link and intercepting pointer events.</td>
+                <td>I tested pointer events: none on the decorative overlay in DevTools. I clicked the link and confirmed that it went to the right destination.</td>
+                <td>Confirmed. The decorative overlay stays visible without blocking the link.</td>
+            </tr>
+            <tr>
+                <td>4. Obscuring sticky heading</td>
+                <td>The sticky heading covers the focus target when the page link moves focus to it.</td>
+                <td>I clicked the focus link, observed the target being obscured, disabled position: sticky in DevTools, and repeated the test. The target became fully visible.</td>
+                <td>Confirmed. Removing the sticky positioning keepsthe heading from blocking the focus target.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="ai-disclosure">
+    <h2>AI Disclosure</h2>
+
+    <p>AI tool used: ChatGPT</p>
+
+    <p>How AI was used: I used ChatGPT as a debugging assistant while working through the four bugs. I shared screenshots of the Chrome DevTools page. ChatGPT helped me identify CSS properties to test and suggested my testing order. I performed all of the DevTools tests, verified the behavior in the browser, made the changes in my starter files, and recorded the screenshots in my evidence folder.</p>
+
+    <h3>Prompts</h3>
+    <ul>
+        <li>"is this bug 1?"</li>
+        <li>"before doing anything else should i save this screenshot as my evidence?"</li>
+        <li>"looks like it is working!"</li>
+        <li>"ok its working should i push now?"</li>
+    </ul>
+
+    <h3>Meaningful AI Output Excerpts</h3>
+    <ul>
+        <li>Suggested testing the property responsible for the unwanted stacking context to determine whether it was trapping the callout.</li>
+        <li>Suggested testing <code>pointer-events: none</code> on <code>.decorative-overlay</code> and then clicking the link to verify navigation.</li>
+        <li>Suggested disabling <code>position: sticky</code> on <code>.sticky-title</code> and repeating the focus-target test.</li>
+        <li>Helped identify the permanent CSS changes after the DevTools tests confirmed each hypothesis.</li>
+    </ul>
+
+    <p>Verification:I tested each hypothesis  in Chrome DevTools before making the permanent CSS changes in vs code. I refreshed and retested the page after the changes and saved before/after screenshots in the evidence folder.</p>
+</section>
         </main>
     </body>
     </html>
+
